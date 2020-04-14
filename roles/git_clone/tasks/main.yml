@@ -20,9 +20,9 @@
       group: laravel
       mode: '777'
   when: not check_repos.stat.exists
-- name: composer install
-  become: no
-  shell: "cd {{ git_repo_dest }}; composer install "
+#- name: composer install
+#  become: no
+#  shell: "cd {{ git_repo_dest }}; composer install "
 - name: check_env
   stat:
     path: "{{ git_repo_dest }}/.env"
