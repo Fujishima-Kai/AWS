@@ -32,9 +32,9 @@
   template:
     src: php-fpm.conf.j2
     dest: /etc/nginx/conf.d/php-fpm.conf
-- name: start php-fpm
-  systemd:
-    name: php-fpm.service
-    state: restarted
-    daemon_reload: yes
-    enabled: yes
+#- name: start php-fpm
+#  systemd:
+#    name: php-fpm.service
+#    state: restarted
+#    daemon_reload: yes
+#    enabled: yes
