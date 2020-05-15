@@ -6,16 +6,16 @@
       name: mariadb-libs
   - name: install mysql repository
     yum:
-      name: https://dev.mysql.com/get/mysql80-community-release-el7-1.noarch.rpm
+      name: https://dev.mysql.com/get/mysql80-community-release-el8-1.noarch.rpm
       validate_certs: yes
-  - name: disable mysql80-community-server
-    shell: yum-config-manager --disable mysql80-community
-  - name: enable mysql57-community-server
-    shell: yum-config-manager --enable mysql57-community
+#  - name: disable mysql80-community-server
+#    shell: yum-config-manager --disable mysql80-community
+#  - name: enable mysql57-community-server
+#    shell: yum-config-manager --enable mysql57-community
   - name: install mysql-community-server
     yum:
       state: present
-      name: ['mysql-community-server','MySQL-python']
+      name: ['mysql-server','MySQL-python']
   - name: running and enabled mysqld
     service:
       name: mysqld
